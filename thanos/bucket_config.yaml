@@ -1,0 +1,6 @@
+type: S3
+config:
+  bucket: hamza-thanos-bucket
+  endpoint: s3.ap-southeast-1.amazonaws.com
+  region: ap-southeast-1
+  insecure: true
