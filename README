@@ -1,8 +1,8 @@
-# Quickstart for Thanos
+# Quickstart for Thanos Spoker Server
 
 ![CI badge](https://github.com/dbluxo/quickstart-thanos/workflows/build-and-test/badge.svg)
 
-Get up and running with Thanos, Prometheus, Grafana, Alertmanager, cAdvisor and node_exporter with a `docker-compose.yaml` file in less than 5 minutes.
+Get up and running with Thanos, Prometheus, Grafana, Alertmanager and node_exporter with a `docker-compose.yaml` file in less than 5 minutes.
 
 ## Running the example
 
@@ -24,16 +24,8 @@ The following services will be installed (and some are accessible via browser):
 | thanos-sidecar-2              | Thanos Sidecar for Prometheus Server 2                                    | not accessible via browser    |
 | thanos-sidecar-3              | Thanos Sidecar for Prometheus Server 3                                    | not accessible via browser    |
 | thanos-sidecar-4              | Thanos Sidecar for Prometheus Server 4                                    | not accessible via browser    |
-| thanos-query-frontend         | Thanos Query Frontend                                                     | <http://localhost:10901/>     |
-| thanos-querier                | Thanos Querier                                                            | <http://localhost:10902/>     |
-| thanos-ruler                  | Thanos Ruler                                                              | <http://localhost:10903/>     |
-| thanos-bucket-web             | Thanos Bucket Web                                                         | <http://localhost:10904/>     |
-| thanos-store-gateway          | Thanos Store Gateway                                                      | not accessible via browser    |
-| thanos-compactor              | Thanos Compactor                                                          | not accessible via browser    |
-| minio                         | Minio - Amazon S3 Compatible Object Storage                               | <http://localhost:9000/>      |
 | alertmanager                  | Alertmanager                                                              | <http://localhost:9093/>      |
 | grafana                       | Grafana                                                                   | <http://localhost:3000/>      |
-| cadvisor                      | cAdvisor                                                                  | <http://localhost:8080/>      |
 | node-exporter                 | node_exporter                                                             | <http://localhost:9100/>      |
 
 ## Credentials
@@ -43,13 +35,6 @@ Grafana:
 ```bash
 username - admin
 password - foobar (Password is stored in the `/grafana/config monitoring` env file)
-```
-  
-Minio:
-
-```bash
-Access Key - smth
-Secret Key - Need8Chars (Keys are stored in the `docker-compose.yaml` file)
 ```
 
 ## Explore metrics

@@ -68,6 +68,8 @@ services:
       - '--grpc-address=0.0.0.0:10091'
       - '--http-address=0.0.0.0:10902'
       - '--objstore.config-file=/etc/thanos/bucket_config.yaml'
+    depends_on:
+      - prometheus-1
     restart: always
 
   thanos-sidecar-2:
@@ -82,6 +84,8 @@ services:
       - '--grpc-address=0.0.0.0:10091'
       - '--http-address=0.0.0.0:10902'
       - '--objstore.config-file=/etc/thanos/bucket_config.yaml'
+    depends_on:
+      - prometheus-2
     restart: always
 
   thanos-sidecar-3:
@@ -96,6 +100,8 @@ services:
       - '--grpc-address=0.0.0.0:10091'
       - '--http-address=0.0.0.0:10902'
       - '--objstore.config-file=/etc/thanos/bucket_config.yaml'
+    depends_on:
+      - prometheus-3
     restart: always
 
   thanos-sidecar-4:
@@ -110,6 +116,8 @@ services:
       - '--grpc-address=0.0.0.0:10091'
       - '--http-address=0.0.0.0:10902'
       - '--objstore.config-file=/etc/thanos/bucket_config.yaml'
+    depends_on:
+      - prometheus-4
     restart: always
 
   node-exporter:
@@ -139,6 +147,9 @@ services:
   grafana:
     image: grafana/grafana:10.4.6
     user: "104"
+    depends_on:
+        - prometheus-1
+        - prometheus-2
     ports:
       - 3000:3000
     volumes:
