@@ -1,0 +1,19 @@
+apiVersion: v1alpha1
+sts-region: ap-southeast-1
+discovery:
+  exportedTagsOnMetrics:
+    EC2:
+      - Name
+  jobs:
+    - type: AWS/EC2
+      regions: [ap-southeast-1]
+      searchTags:
+        - key: Monitoring
+          value: Active
+      metrics:
+        - name: CPUUtilization
+          statistics: [Average]
+        - name: DiskReadBytes
+          statistics: [Average]
+        - name: NetworkIn
+          statistics: [Average]

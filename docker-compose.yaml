@@ -166,3 +166,12 @@ services:
     env_file:
       - ./grafana/config.monitoring
     restart: always
+
+  yace:
+    image: ghcr.io/nerdswords/yet-another-cloudwatch-exporter:v0.58.0
+    volumes:
+      - ./cloudwatch-exporter/yace-config.yaml:/config.yaml
+    command:
+      - "--config.file=/config.yaml"
+    ports:
+      - "5000:5000"
