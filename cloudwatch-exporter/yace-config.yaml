@@ -17,3 +17,11 @@ discovery:
           statistics: [Average]
         - name: NetworkIn
           statistics: [Average]
+
+    - type: AWS/CloudFront
+      regions: [ap-southeast-1, us-east-1, me-central-1]
+      metrics:
+        - name: Requests
+          statistics: [Sum]
+        - name: BytesDownloaded
+          statistics: [Average]
