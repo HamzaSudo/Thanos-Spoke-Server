@@ -175,6 +175,7 @@ services:
       - "--config.file=/config.yaml"
     ports:
       - "5000:5000"
+    restart: always
 
   thanos-querier:
     image: quay.io/thanos/thanos:v0.31.0
